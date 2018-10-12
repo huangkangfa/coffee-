@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="com.netease.nimlib:avchat-5.6.1">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/avchat-5.6.1.aar/04cad6bc351220c7186469dbfc7f269f/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/avchat-5.6.1.aar/04cad6bc351220c7186469dbfc7f269f/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.netease.nimlib/avchat/5.6.1/a808d080c893716562b0e4ceceb6a158aa4af9a2/avchat-5.6.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

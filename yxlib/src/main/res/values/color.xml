@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <!--   样式   view_bottom   -->
+    <color name="tab_unselect">#c9c9c9</color>
+    <color name="tab_select">#4F8DFF</color>
+
+</resources>

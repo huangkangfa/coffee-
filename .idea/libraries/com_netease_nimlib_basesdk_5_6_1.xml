@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="com.netease.nimlib:basesdk-5.6.1">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/basesdk-5.6.1.aar/f74b8ced9f7784cd51f9c3530a03fbe0/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/basesdk-5.6.1.aar/f74b8ced9f7784cd51f9c3530a03fbe0/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.netease.nimlib/basesdk/5.6.1/40525b9845e7047cf8136d3140e53bdf5159190e/basesdk-5.6.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

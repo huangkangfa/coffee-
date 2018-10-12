@@ -1,0 +1,74 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+
+    defaultConfig {
+        applicationId "com.youxin.app"
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.appTargetSdkVersion
+        versionCode rootProject.ext.versionCode
+        versionName rootProject.ext.versionName
+
+        multiDexEnabled true
+
+        ndk {
+            //设置支持的SO库架构
+            abiFilters "arm64-v8a", "armeabi-v7a", "x86", "x86_64"
+        }
+
+        //指定room.schemaLocation生成的文件路径
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = ["room.schemaLocation": "$projectDir/schemas".toString()]
+            }
+        }
+
+    }
+
+//    sourceSets {
+//        main{
+//            res.srcDirs = ['res', 'res-im']
+//        }
+//    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    //导入dataBinding支持
+    dataBinding {
+        enabled true
+    }
+    sourceSets { main { res.srcDirs = ['src/main/res', 'src/main/res-im'] } }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation project(':yxlib')
+
+    //room  db
+    implementation 'android.arch.persistence.room:runtime:1.1.0-beta2'
+    annotationProcessor 'android.arch.persistence.room:compiler:1.1.0-beta2'
+    implementation 'android.arch.persistence.room:rxjava2:1.1.0-beta2'
+
+    // 添加依赖。注意，版本号必须一致。
+    // 基础功能 (必需)
+    implementation 'com.netease.nimlib:basesdk:5.6.1'
+    // 音视频和互动白板服务需要
+    implementation 'com.netease.nimlib:nrtc:5.6.1'
+    // 音视频需要
+    implementation 'com.netease.nimlib:avchat:5.6.1'
+    // 聊天室需要
+    implementation 'com.netease.nimlib:chatroom:5.6.1'
+    // 互动白板服务需要
+    implementation 'com.netease.nimlib:rts:5.6.1'
+    // 全文检索服务需要
+    implementation 'com.netease.nimlib:lucene:5.6.1'
+    // 小米、华为、魅族、fcm 推送
+    implementation 'com.netease.nimlib:push:5.6.1'
+}
