@@ -9,6 +9,8 @@ import com.youxin.app.db.DBManager;
 import com.youxin.app.model.User;
 import com.youxin.yxlib.base.BaseActivity;
 import com.youxin.yxlib.base.BaseFragment;
+import com.youxin.yxlib.supper.http.OkGoRxManager;
+import com.youxin.yxlib.supper.http.convert.Transformer;
 import com.youxin.yxlib.util.ThreadManager;
 import com.youxin.yxlib.util.ToastUtil;
 
@@ -65,6 +67,12 @@ public class MainActivity extends BaseActivity {
                 DBManager.getDB().userDao().insertAll(user);
             }
         });
+    }
+
+    public void get(){
+        OkGoRxManager.<String>postObservable("www.baidu.com",null,null)
+                .compose(Transformer.<String>switchSchedulers())
+                .subscribe();
     }
 
 }

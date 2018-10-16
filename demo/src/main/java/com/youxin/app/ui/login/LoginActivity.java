@@ -12,4 +12,5 @@ public class LoginActivity extends BaseActivity{
     public BaseFragment setRootFragment() {
         return null;
     }
+
 }

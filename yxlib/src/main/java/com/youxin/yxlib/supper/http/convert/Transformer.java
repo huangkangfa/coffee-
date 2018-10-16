@@ -9,8 +9,6 @@ import io.reactivex.Observable;
 import io.reactivex.ObservableSource;
 import io.reactivex.ObservableTransformer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.disposables.Disposable;
-import io.reactivex.functions.Consumer;
 import io.reactivex.schedulers.Schedulers;
 
 /**
@@ -18,18 +16,6 @@ import io.reactivex.schedulers.Schedulers;
  */
 
 public class Transformer {
-
-    public static <T> ObservableTransformer<Response<BaseResponse<T>>, Response<BaseResponse<T>>> switchSchedulers(final Consumer<Disposable> mConsumer) {
-        return new ObservableTransformer<Response<BaseResponse<T>>, Response<BaseResponse<T>>>() {
-            @Override
-            public ObservableSource<Response<BaseResponse<T>>> apply(@NonNull Observable<Response<BaseResponse<T>>> upstream) {
-                return upstream
-                        .subscribeOn(Schedulers.io())
-                        .doOnSubscribe(mConsumer)
-                        .observeOn(AndroidSchedulers.mainThread());
-            }
-        };
-    }
 
     public static <T> ObservableTransformer<Response<BaseResponse<T>>, Response<BaseResponse<T>>> switchSchedulers() {
         return new ObservableTransformer<Response<BaseResponse<T>>, Response<BaseResponse<T>>>() {
